@@ -70,6 +70,7 @@ class KeenIOService implements KeenIOServiceInterface
 
         return KeenIOClient::factory([
             'projectId' => $config->get('projectId'),
+            'masterKey'  => $config->get('masterKey'),
             'writeKey'  => $config->get('writeKey'),
             'readKey'   => $config->get('readKey'),
             'version'   => $config->get('version'),

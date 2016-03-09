@@ -23,15 +23,9 @@ class ModuleOptions extends Options
     /** @var array */
     protected $defaults = [
         // Default project
-        'default' => 'my-first-project',
+        'default' => '',
 
         // Projects
-        'projects' => [
-            'my-first-project' => [
-                'write' => '',
-                'read' => '',
-                'master' => '',
-            ],
-        ],
+        'projects' => [],
     ];
 }

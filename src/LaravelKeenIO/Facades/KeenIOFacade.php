@@ -21,7 +21,7 @@ namespace LaravelKeenIO\Facades;
 use Illuminate\Support\Facades\Facade;
 use LaravelKeenIO\Services\KeenIOService;
 
-class PMHelperFacade extends Facade
+class KeenIOFacade extends Facade
 {
     /**
      * Name of the binding container

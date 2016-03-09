@@ -24,7 +24,7 @@ use LaravelKeenIO\Exceptions\ConfigurationException;
 use LaravelKeenIO\Options\ModuleOptions;
 use LaravelKeenIO\Services\KeenIOService;
 
-class LaravelPMProvider extends ServiceProvider
+class LaravelKeenIOProvider extends ServiceProvider
 {
     /**
      * Boot

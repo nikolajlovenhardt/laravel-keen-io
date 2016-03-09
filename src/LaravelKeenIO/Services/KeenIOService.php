@@ -64,11 +64,16 @@ class KeenIOService implements KeenIOServiceInterface
         $config = $projects[$project];
 
         // Version
-        if (is_null($config['version'])) {
-            $config['version'] = self::DEFAULT_VERSION;
+        if (is_null($config->get('version'))) {
+            $config->set('version', self::DEFAULT_VERSION);
         }
 
-        return KeenIOClient::factory($config);
+        return KeenIOClient::factory([
+            'projectId' => $config->get('projectId'),
+            'writeKey'  => $config->get('writeKey'),
+            'readKey'   => $config->get('readKey'),
+            'version'   => $config->get('version'),
+        ]);
     }
 
     /**
@@ -81,8 +86,8 @@ class KeenIOService implements KeenIOServiceInterface
         /** @var Project[]|array $projects */
         $projects = [];
 
-        foreach ($this->moduleOptions->get('projects') as $project) {
-            $projects[] = new Project($project);
+        foreach ($this->moduleOptions->get('projects') as $title => $project) {
+            $projects[$title] = new Project($project);
         }
 
         return $projects;

@@ -102,4 +102,17 @@ class Options implements OptionsInterface
 
         return $options;
     }
+
+    /**
+     * Set value
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return bool
+     */
+    public function set($key, $value)
+    {
+        $this->options[$key] = $value;
+        return true;
+    }
 }

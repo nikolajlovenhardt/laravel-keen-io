@@ -90,7 +90,7 @@ class DemoController
 {
     public function action()
     {
-        /** @var KeenIOClient $default */
+        /** @var KeenIOClient $keenIO */
         $keenIO = KeenIO::client();
 
         echo 'KeenIOClient with the default project';
@@ -100,7 +100,7 @@ class DemoController
     {
         $project = 'projectName';
 
-        /** @var KeenIOClient $default */
+        /** @var KeenIOClient $keenIO */
         $keenIO = KeenIO::client($project);
 
         echo sprintf(

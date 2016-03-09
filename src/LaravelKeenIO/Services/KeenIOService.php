@@ -23,7 +23,7 @@ use LaravelKeenIO\Exceptions\ConfigurationException;
 use LaravelKeenIO\Options\ModuleOptions;
 use LaravelKeenIO\Options\Project;
 
-class KeenIOService
+class KeenIOService implements KeenIOServiceInterface
 {
     const DEFAULT_VERSION = '3.0';
 

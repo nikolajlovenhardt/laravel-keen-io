@@ -14,7 +14,9 @@ composer require nikolajlovenhardt/laravel-keen-io
 Add the `LaravelKeenIO\LaravelKeenIOProvider` in `config/app.php`
 
 ```php
+[
     LaravelKeenIO\LaravelKeenIOProvider::class,
+],
 ```
 
 Then run `php artisan vendor:publish` to publishe the keen.io configuration file into `config/keen-io.php` and add
@@ -22,7 +24,9 @@ your projects.
 
 ### Facade (optional)
 ```php
+[
     'KeenIO' => LaravelKeenIO\Facades\KeenIOFacade::class,
+],
 ```
 
 ## Usage
@@ -51,7 +55,7 @@ class DemoController
 
     public function action()
     {
-        /** @var KeenIOClient $default */
+        /** @var KeenIOClient $keenIO */
         $keenIO = $this->keenIOService->client();
 
         echo 'KeenIOClient with the default project';
@@ -61,7 +65,7 @@ class DemoController
     {
         $project = 'projectName';
 
-        /** @var KeenIOClient $default */
+        /** @var KeenIOClient $keenIO */
         $keenIO = $this->keenIOService->client($project);
 
         echo sprintf(
@@ -82,7 +86,8 @@ use KeenIO;
 use LaravelKeenIO\Services\KeenIOService;
 use LaravelKeenIO\Services\KeenIOServiceInterface;
 
-class DemoCo
+class DemoController
+{
     public function action()
     {
         /** @var KeenIOClient $default */
